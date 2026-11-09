@@ -1,0 +1,106 @@
+	.add-car-page main {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #ffffff; /* The base white color */
+  background-image: repeating-conic-gradient(
+    rgba(0, 0, 0, 0.04) 0% 25%, /* Draws a 4% opacity black square */
+    transparent 0% 50%          /* Leaves the next square transparent (white) */
+  );
+  background-size: 60px 60px; /* Controls the size of the checkerboard squares */
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.add-car-page {
+  width: 100%;
+  color:white ;
+}
+	.add-car-page img{
+  padding: 10px;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+	.add-car-page h1{
+  font-size: 40px;
+  color: black;
+}
+	.add-car-page .form-header{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 1px;
+  font-size: 15px;
+}
+
+	.add-car-page input{
+  height: 40px;
+  border-radius: 3px;
+  color: grey;
+  box-sizing: border-box;
+  background-color:white;
+  border-color: grey;
+  border-width: 2px;
+  margin-bottom: 15px;
+}
+	.add-car-page input:focus{
+  transform:scale(1.03);
+}
+	.add-car-page .heading{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+
+}
+
+	.add-car-page #nct_result{
+font-size: 15px;
+margin-bottom: 38px;
+}
+.add-car-page .card {
+  border-style: solid;
+  min-height: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-color: red;
+  background-color: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 750px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+	.add-car-page .navigate{
+display: flex;
+justify-content:space-between;
+margin-top: auto;
+}
+
+	.add-car-page .navigate button:only-child{
+  margin-left:auto;
+  padding: 0;
+}
+	.add-car-page button{
+    width: 100px;
+    height: 40px;
+    padding: 10px;
+    color:white;
+    font-weight: bold;
+    background-color: red;
+    border-radius:8px;
+    font-size: 15px;
+}
+	.add-car-page button:hover{ 
+transform:scale(1.05);
+} 
+	.add-car-page [type=checkbox]{
+  height: 20px;
+  width:50px;
+}
+	.add-car-page h2{
+  font-size: 18px;
+  font-weight: bold;
+}
+

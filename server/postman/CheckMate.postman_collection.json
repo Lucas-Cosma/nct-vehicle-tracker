@@ -1,0 +1,87 @@
+{
+  "info": {
+    "name": "CheckMate Notifications (development)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Set {{adminKey}} to your ADMIN_API_KEY, then run 'Create sample car' first; it stores {{userId}}."
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000/api" },
+    { "key": "adminKey", "value": "paste-your-ADMIN_API_KEY-here" },
+    { "key": "userId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "Health check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/health" }
+    },
+    {
+      "name": "Create sample car",
+      "event": [
+        {
+          "listen": "test",
+          "script": { "exec": ["if (pm.response.code < 300) { pm.collectionVariables.set('userId', pm.response.json().user.id); }"] }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "X-Admin-Key", "value": "{{adminKey}}" }],
+        "url": "{{baseUrl}}/dev/sample-car"
+      }
+    },
+    {
+      "name": "Run reminders",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Admin-Key", "value": "{{adminKey}}" }
+        ],
+        "url": "{{baseUrl}}/dev/reminders/run",
+        "body": { "mode": "raw", "raw": "{}" }
+      }
+    },
+    {
+      "name": "Run reminders (pretend it's another day)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Admin-Key", "value": "{{adminKey}}" }
+        ],
+        "url": "{{baseUrl}}/dev/reminders/run",
+        "body": { "mode": "raw", "raw": "{\n  \"date\": \"2026-12-01\"\n}" }
+      }
+    },
+    {
+      "name": "List notifications",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "X-Admin-Key", "value": "{{adminKey}}" }],
+        "url": "{{baseUrl}}/dev/notifications"
+      }
+    },
+    {
+      "name": "Get preferences",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "X-Dev-User-Id", "value": "{{userId}}" }],
+        "url": "{{baseUrl}}/users/me/preferences"
+      }
+    },
+    {
+      "name": "Update preferences (SMS only)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Dev-User-Id", "value": "{{userId}}" }
+        ],
+        "url": "{{baseUrl}}/users/me/preferences",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"emailNotifications\": false,\n  \"smsNotifications\": true,\n  \"phone\": \"+353871234567\"\n}"
+        }
+      }
+    }
+  ]
+}

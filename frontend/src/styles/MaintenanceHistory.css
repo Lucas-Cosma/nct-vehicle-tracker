@@ -1,0 +1,93 @@
+.project-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  background: #2c2c2c;
+}
+
+.project-navigation button,
+.maintenance-page button {
+  width: auto;
+  min-width: 120px;
+  height: auto;
+  min-height: 40px;
+}
+
+.project-navigation button[aria-pressed='true'] {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+.maintenance-page main {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.maintenance-page .card {
+  background-color: #2c2c2c;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+.maintenance-page { 
+  padding-bottom: 24px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  background-image: repeating-conic-gradient(
+    rgba(0, 0, 0, 0.04) 0% 25%,
+    transparent 0% 50%
+  );
+  background-size: 60px 60px;
+  color: white;
+ }
+.maintenance-page .heading { grid-template-columns: 140px 1fr; }
+.maintenance-page h1 { color: #111; padding-right: 20px; }
+.maintenance-demo { max-width: 760px; margin: 0 auto 20px; padding: 0 16px; color: #333; }
+
+.maintenance-page .maintenance-card {
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  max-width: 760px;
+  height: auto;
+  margin: 0 auto 20px;
+  padding: 24px;
+  gap: 12px;
+  color: white;
+  text-align: left;
+}
+
+.maintenance-page h2,
+.maintenance-page h3 { color: white; }
+.maintenance-page h3 { margin: 0 0 8px; font-size: 18px; }
+.maintenance-page input,
+.maintenance-page textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 0;
+  color: #222;
+  background: white;
+  border: 2px solid #888;
+  border-radius: 3px;
+  font: inherit;
+  box-sizing: border-box;
+  color-scheme: light;
+}
+.maintenance-page input:focus { transform: none; }
+.maintenance-page textarea { resize: vertical; }
+.maintenance-page button { align-self: flex-start; }
+.maintenance-page button:disabled { opacity: .6; cursor: not-allowed; }
+.maintenance-error { color: #ffbaba; }
+.maintenance-status { color: #b4efbd; }
+.maintenance-status:empty { display: none; }
+.maintenance-list { list-style: none; margin: 0; padding: 0; }
+.maintenance-list li { padding: 16px 0; border-top: 1px solid #777; overflow-wrap: anywhere; }
+.maintenance-notes { white-space: pre-wrap; }
+
+@media (max-width: 600px) {
+  .maintenance-page .heading { display: flex; flex-direction: column; }
+  .maintenance-page .heading img { padding: 16px 0 0; }
+  .maintenance-page h1 { font-size: 30px; padding: 0 16px; }
+  .maintenance-page .maintenance-card { padding: 16px; }
+}

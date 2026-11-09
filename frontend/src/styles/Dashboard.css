@@ -1,0 +1,135 @@
+.dashboard-page {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: black;
+}
+
+.dashboard-page header {
+  display: flex;
+  flex-wrap: wrap;           
+  align-items: center;
+  gap: 10px 30px;
+  padding: 10px 30px;
+  border-bottom: 2px solid black;
+}
+
+
+.dashboard-page .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dashboard-page .logo img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+.dashboard-page nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;                 
+  padding: 0;
+  font-size: 22px;
+}
+
+.dashboard-page nav a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;      
+}
+
+.dashboard-page nav a:hover {
+  color: red;
+}
+
+.dashboard-page .profile {
+  margin-left: auto;          
+  font-size: 28px;
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .dashboard-page nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .dashboard-page nav ul {
+    justify-content: space-around;
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 35px;
+  align-items: flex-start;
+}
+
+
+.dashboard-page .leftside {flex: 1; 
+  min-width: 280px; }
+.rightside {flex: 1.2; 
+  min-width: 300px;}
+
+
+.dashboard-page .car-image {
+  border: 2px solid black;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+}
+
+.dashboard-page .car-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.dashboard-page .tabs { display: flex; margin: 15px 0; }
+.dashboard-page .tab { flex: 1; padding: 8px; border: 1px solid #222; background: white; cursor: pointer; }
+.dashboard-page .tab.active { background: red; }
+
+.dashboard-page fieldset {
+    border: 2px solid black;
+    padding: 10px 15px;
+  }
+
+.dashboard-page fieldset span {
+    display:inline-block;
+    width: 80px;
+  }
+
+.dashboard-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+  }
+
+.dashboard-page td, .dashboard-page th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+  }
+.dashboard-page .box-title {
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 10px;
+  } 
+
+.dashboard-page .overdue{
+    background: red;
+    color: white;
+  }
+
+.dashboard-page .head {
+    background: lightgrey;
+  }
